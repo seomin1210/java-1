@@ -1,33 +1,33 @@
-public class Ex53ColorPoints {
+public class Ex52SuperEx {
     public static void main(String[] args) {
-        Point p = new Point();
-        p.set(1,2);
-        p.showPoint();
-
-        ColorPoint cp = new ColorPoint();
-        cp.set(3,4);
-        cp.setColor("red");
+        ColorPoint1 cp = new ColorPoint1(5, 6, "blue");
         cp.showColorPoint();
     }
 }
 
-class Point {
+class Point1 {
     private int x, y;
 
-    public void set(int x, int y) {
+    public Point1() {
+        this.x = 0;
+        this.y = 0;
+    }
+
+    public Point1(int x, int y) {
         this.x = x;
         this.y = y;
     }
-
+    
     public void showPoint() {
         System.out.println("(" + x + ", " + y + ")");
     }
 }
 
-class ColorPoint extends Point {
+class ColorPoint1 extends Point1 {
     private String color;
 
-    public void setColor(String color) {
+    public ColorPoint1(int x, int y, String color) {
+        super(x, y); // Point1의 매개변수가 있는 생성자 호출
         this.color = color;
     }
 
